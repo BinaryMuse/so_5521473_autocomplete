@@ -1,4 +1,7 @@
 So5521473Autocomplete::Application.routes.draw do
+  resources :messages do
+    get :autocomplete_user_nickname, :on => :collection
+  end
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

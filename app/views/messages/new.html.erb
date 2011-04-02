@@ -1,0 +1,10 @@
+<h1>New Message</h1>
+<%= form_for @message do |f| %>
+  <%= f.hidden_field :to, :id => "real_user_id" %>
+  To:      <%= autocomplete_field_tag 'fake_user', '',
+               autocomplete_user_nickname_messages_path,
+               :size => 75, :id_element => "#real_user_id" %><br />
+  Subject: <%= f.text_field :subject %><br />
+  Body:    <%= f.text_area :body %><br />
+           <%= f.submit %>
+<% end %>
